@@ -1,0 +1,30 @@
+{% extends 'base.htm' %}
+{% block content %}
+{% load static %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>NEW TODO</title>
+        <link rel="stylesheet" type="text/css" href="{% static '/css/new.css' %}">
+    </head>
+    <body>
+        <div class="shadow p-3 mb-5 bg-white rounded" id="contents">
+            <form action="{% url 'create' %}">
+                <h4>제목</h4>&nbsp;&nbsp;&nbsp;&nbsp;
+                <input type="text" name="title">
+                <br><br>
+                <h4>날짜</h4>&nbsp;&nbsp;&nbsp;&nbsp;
+                <input type="date" name="date">
+                <br><br>
+                <h4>시간</h4>&nbsp;&nbsp;&nbsp;&nbsp;
+                <input type="time" name="time">
+                <br><br>
+                <h4>내용</h4>&nbsp;&nbsp;&nbsp;&nbsp;
+                <textarea cols=34 rows=10 name="body"></textarea>
+                <br><br>
+                <input class="btn btn-outline-secondary" type="submit" value="추가하기">
+            </form>
+        </div>
+    </body>
+</html>
+{% endblock %}

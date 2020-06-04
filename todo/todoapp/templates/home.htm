@@ -1,16 +1,16 @@
-<!-- {% extends 'base.htm' %}
-{% block content %} -->
+{% extends 'base.htm' %}
+{% block content %}
 {% load static %}
 <!DOCTYPE html>
 <html>
   <head>
-    <title>TODO list</title>
+    <title>CALENDAR</title>
     <link rel="stylesheet" type="text/css" href="{% static '/css/home.css' %}">
   </head>
   <body>
-    <table>
+    <table class="calendar">
       <tr>
-        <th class="month" colspan="7">JUNE</th>
+        <th class="month" colspan="7">JUNE 2020</th>
       </tr>
       <tr>
         <th>SUN</th>
@@ -26,7 +26,7 @@
         <td>1</td>
         <td>2</td>
         <td>3</td>
-        <td id="today"><a href="{% url 'todo' %}">4</a></td>
+        <td id="today"><a id="date" href="{% url 'todo' %}">4</a></td>
         <td>5</td>
         <td>6</td>
       </tr>
@@ -70,4 +70,4 @@
     </table>
   </body>
 </html>
-<!-- {% endblock %} -->
+{% endblock %}

@@ -1,0 +1,19 @@
+{% extends 'base.htm' %}
+{% block content %}
+{% load static %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>TODO DETAIL</title>
+        <link rel="stylesheet" type="text/css" href="{% static '/css/detail.css' %}">
+    </head>
+    <body>
+        <div class="shadow p-3 mb-5 bg-white rounded" id="body">
+            <h1>{{todo.title}}</h1>
+            <p>{{todo.time}}</p>
+            <p>{{todo.body}}</p>
+            <a href="{% url 'todo' %}">돌아가기</a>
+        </div>
+    </body>
+</html>
+{% endblock %}

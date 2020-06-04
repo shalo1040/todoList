@@ -21,4 +21,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', todoapp.views.home, name='home'),
     path('todo/', todoapp.views.todo, name='todo'),
+    path('detail/<int:todo_id>', todoapp.views.detail, name='detail'),
+    path('new/', todoapp.views.new, name='new'),
+    path('create', todoapp.views.create, name='create'),
 ]

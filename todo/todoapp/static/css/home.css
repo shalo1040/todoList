@@ -4,10 +4,10 @@
     padding-bottom: 40px;
 }
 
-table {
+.calendar {
     display: flex;
     justify-content: center;
-    margin-top: 150px;
+    margin-top: 100px;
 }
 th {
     font-size: 40px;
@@ -19,7 +19,7 @@ td {
     font-size: 30px;
     padding: 10px 0px;
 }
-a {
+#date {
     text-decoration: none;
     color: white;
 }

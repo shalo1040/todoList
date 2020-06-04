@@ -1,4 +1,23 @@
 {% extends 'base.htm' %}
 {% block content %}
-
+{% load static %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>TODO LIST</title>
+        <link rel="stylesheet" type="text/css" href="{% static '/css/todo.css' %}">
+        <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@500&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        {% for todo in todos.all %}
+            <a id="todoBox" href="{% url 'detail' todo.id %}">
+                <div class="shadow p-3 mb-5 bg-white rounded" id="todo">
+                    <h1>{{todo.title}}</h1>
+                    <p>{{todo.time}}</p>
+                    <p>{{todo.body}}</p>
+                </div>
+            </a>
+        {% endfor %}
+    </body>
+</html>
 {% endblock %}

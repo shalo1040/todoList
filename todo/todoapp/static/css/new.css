@@ -1,0 +1,19 @@
+div {
+    width: 350px;
+    margin: 0px auto;
+}
+
+form {
+    margin-top: 10px;
+}
+h4, input {
+    display: inline-block;
+}
+
+textarea {
+    display: flex;
+}
+
+#contents {
+    margin-top: 50px;
+}
