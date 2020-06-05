@@ -3,18 +3,18 @@ from .models import Todo
 
 # Create your views here.
 def home(request):
-    return render(request, 'home.htm')
+    return render(request, 'home.html')
 
 def todo(request):
     todos = Todo.objects
-    return render(request, 'todo.htm', {'todos':todos})
+    return render(request, 'todo.html', {'todos':todos})
 
 def detail(request, todo_id):
     todo_detail = get_object_or_404(Todo, pk=todo_id)
-    return render(request, 'detail.htm', {'todo':todo_detail})
+    return render(request, 'detail.html', {'todo':todo_detail})
 
 def new(request):
-    return render(request, 'new.htm')
+    return render(request, 'new.html')
 
 def create(request):
     todo = Todo()
@@ -35,7 +35,7 @@ def edit(request, todo_id):
         todo_detail = get_object_or_404(Todo, pk=todo_id)
         date = "2020-06-" + str(todo_detail.time)[8:10]
         time = str(todo_detail.time)[11:13] + ":" + str(todo_detail.time)[14:16]
-        return render(request, 'edit.htm', {'todo':todo_detail, 'date':date, 'time':time})
+        return render(request, 'edit.html', {'todo':todo_detail, 'date':date, 'time':time})
 
 def update(request, todo_id):
     todo = get_object_or_404(Todo, pk=todo_id)
