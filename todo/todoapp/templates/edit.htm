@@ -1,0 +1,31 @@
+{% extends 'base.htm' %}
+{% block content %}
+{% load static %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>EDIT TODO</title>
+        <link rel="stylesheet" type="text/css" href="{% static '/css/new.css' %}">
+    </head>
+    <body>
+        <div class="shadow p-3 mb-5 bg-white rounded" id="contents">
+            <form action="{% url 'update' todo.id %}" method="POST">
+                {% csrf_token %}
+                <h4>제목</h4>&nbsp;&nbsp;&nbsp;&nbsp;
+                <input type="text" name="title" value={{todo.title}}>
+                <br><br>
+                <h4>날짜</h4>&nbsp;&nbsp;&nbsp;&nbsp;
+                <input type="date" name="date" value={{date}}>
+                <br><br>
+                <h4>시간</h4>&nbsp;&nbsp;&nbsp;&nbsp;
+                <input type="time" name="time" value={{time}}>
+                <br><br>
+                <h4>내용</h4>&nbsp;&nbsp;&nbsp;&nbsp;
+                <textarea cols=34 rows=10 name="body">{{todo.body}}</textarea>
+                <br><br>
+                <input class="btn btn-outline-secondary" type="submit" value="수정하기">
+            </form>
+        </div>
+    </body>
+</html>
+{% endblock %}

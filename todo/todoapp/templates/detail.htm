@@ -6,13 +6,30 @@
     <head>
         <title>TODO DETAIL</title>
         <link rel="stylesheet" type="text/css" href="{% static '/css/detail.css' %}">
+        <!-- <style>
+            form {
+                display: inline;
+                margin: 10px 10px;
+            }
+        </style> -->
     </head>
     <body>
         <div class="shadow p-3 mb-5 bg-white rounded" id="body">
             <h1>{{todo.title}}</h1>
             <p>{{todo.time}}</p>
-            <p>{{todo.body}}</p>
-            <a href="{% url 'todo' %}">돌아가기</a>
+            <p>{{todo.body}}</p><br>
+            <a id="back" href="{% url 'todo' %}">돌아가기</a>
+            <br><br>
+            <div>
+                <form action="{% url 'edit' todo.id %}" method="POST">
+                    {% csrf_token %}
+                    <input class="btn btn-outline-secondary" type="submit" value="수정">
+                </form>
+                <form action="{% url 'delete' todo.id %}" method="POST">
+                    {% csrf_token %}
+                    <input class="btn btn-outline-secondary" type="submit" value="삭제">
+                </form>
+            </div>
         </div>
     </body>
 </html>

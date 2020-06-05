@@ -24,4 +24,7 @@ urlpatterns = [
     path('detail/<int:todo_id>', todoapp.views.detail, name='detail'),
     path('new/', todoapp.views.new, name='new'),
     path('create', todoapp.views.create, name='create'),
+    path('detail/<int:todo_id>/delete/', todoapp.views.delete, name='delete'),
+    path('detail/<int:todo_id>/edit/', todoapp.views.edit, name='edit'),
+    path('detail/<int:todo_id>/update/', todoapp.views.update, name='update'),
 ]

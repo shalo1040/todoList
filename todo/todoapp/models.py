@@ -3,7 +3,7 @@ from django.db import models
 # Create your models here.
 class Todo(models.Model):
     title = models.CharField(max_length=200)
-    time = models.DateTimeField('data published')
+    time = models.DateTimeField('due date')
     body = models.TextField()
 
     def __str__(self):
